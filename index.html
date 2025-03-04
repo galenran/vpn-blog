@@ -91,20 +91,19 @@
 
   <script>
     function checkLogin() {
-      const user = document.getElementById("username").value;
-      const pass = document.getElementById("password").value;
-
-      // 这里写死用户名和密码，仅作演示用
-      if (user === "admin" && pass === "123456") {
-        // 假登录：记录登录状态并跳转到内部页面 internal.html
-        localStorage.setItem("fakeLoggedIn", "yes");
-        window.location.href = "internal.html";
-      } else {
-        alert("用户名或密码错误！");
-      }
-      // 阻止表单默认提交
-      return false;
-    }
+  const user = document.getElementById("username").value;
+  const pass = document.getElementById("password").value;
+  console.log("输入的用户名:", user, "密码:", pass);
+  
+  if (user === "admin" && pass === "123456") {
+    console.log("验证成功，准备跳转到 internal.html");
+    localStorage.setItem("fakeLoggedIn", "yes");
+    window.location.href = "internal.html";
+  } else {
+    alert("用户名或密码错误！");
+  }
+  return false;
+}
   </script>
 </body>
 </html>
